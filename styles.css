@@ -1,0 +1,265 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body::-webkit-scrollbar {
+    display: hidden;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px; 
+    border-radius: 5px;
+    transition: padding 0.3s ease-in-out;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 15px; 
+    font-weight: 400;
+    padding-bottom: 5px;
+    position: relative;
+    font-size: 0.9rem;
+    transition: margin-left 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.container {
+    height: 100vh;
+    text-align: center;
+    max-width: 800px;
+    padding: 120px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.container p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #b3b3b3;
+}
+
+.highlight {
+    color: #00c39a;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1.5px solid #ffffff;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #00c39a;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #141414;
+    color: #fff;
+    padding: 50px;
+    min-height: 60vh; /* Reduced height */
+    margin: 0 auto;
+    align-items: center; /* Center content vertically */
+}
+
+.about-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-content h2 {
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.about-image {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 55%; /* Increased image size */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+    max-width: 60%;
+}
+.footer {
+    background-color: #121212;
+    color: #ccc;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.footer h1 {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.footer h1 span {
+    color: #00c39a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem;
+    }
+    nav a {
+        margin-left: 15px;
+    }
+    .container h1 {
+        font-size: 2.5rem;
+    }
+    .btn {
+        padding: 8px 20px;
+    }
+
+    /* About Us Section */
+    .about-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .about-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    .about-image {
+        margin-top: 20px;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1rem;
+        padding: 8px;
+    }
+    nav {
+        padding: 8px;
+    }
+    nav a {
+        margin-left: 10px;
+        font-size: 0.8rem;
+    }
+    .container h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+    .footer {
+        padding: 20px 10px;
+    }
+
+    /* About Us Section */
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    .about-content p {
+        font-size: 0.9rem;
+    }
+    .about-image {
+        max-width: 100%;
+    }
+}
