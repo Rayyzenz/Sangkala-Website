@@ -263,3 +263,85 @@ nav a:hover::after {
         max-width: 100%;
     }
 }
+
+/* Project Section */
+.project-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #121212;
+    max-width: 1200px; /* Set max width to fit the page layout */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+.project-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.project-section p {
+    font-size: 1.2rem;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+}
+
+.project-section .highlight {
+    color: #00c39a;
+}
+
+/* Project Grid - 4 Columns, 2 Rows (8 total squares) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+    grid-gap: 50px;
+    max-width: 100%; /* Make sure it spans full width */
+    margin-bottom: 30px;
+}
+
+.project-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Keeps the aspect ratio square */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire item */
+    border-radius: 10px; /* Same border radius as the item */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.project-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+/* Responsive - Adjust columns on smaller screens */
+@media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr); /* Keep 4 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for very small screens */
+    }
+}
+
+
+
